@@ -5,12 +5,14 @@ const NavBar = () => {
   const { isAuthenticated, loginWithRedirect, logout } = useAuth0();
 
   return (
-    <div>
-      {!isAuthenticated && (
-        <button onClick={() => loginWithRedirect({})}>Log in</button>
-      )}
-
-      {isAuthenticated && <button onClick={() => logout()}>Log out</button>}
+    <div className="d-flex justify-content-around">
+      <h2 className='mb-5 p-2'>Web Gallery</h2>
+      <div>
+        {isAuthenticated
+          ? <button onClick={() => logout()}>Log out</button>
+          : <button onClick={() => loginWithRedirect({})}>Log in</button>
+        }
+      </div>
     </div>
   );
 };

@@ -1,14 +1,8 @@
 import { connect } from 'react-redux';
 import App from '../components/App';
-import { setGuesses } from '../actions';
 
-const mapStateToProps = state => ({
-  guesses: state.guesses,
-  cities: state.cities,
-});
+const mapStateToProps = state => ({});
 
-const mapDispatchToProps = {
-  setGuesses
-};
+const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
